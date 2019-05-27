@@ -1,26 +1,48 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Select from './Select';
+import StateTest from './StateTest';
+import TextEdit from './TextEdit';
+import Counter from './Counter';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
+ 
+
+const branches = [
+  {key: 1, value: "red"},
+  {key: 2, value: "blue"},
+  {key: 3, value: "green"},
+  {key: 4, value: "yellow"}
+]
+
+const employees = [
+  {key: 1, value: "Radhakanta"},
+  {key: 2, value: "Sairata"},
+  {key: 3, value: "Monoj"},
+  {key: 4, value: "Harish"}
+]
+class App extends React.Component {
+
+  render() {
+    return (
+
+      <div>
+      <Select data={ branches}/>
+      <Select data={employees}/> 
+      <StateTest /><br/>
+      <TextEdit /><br/>
+      <Counter />
+      <Router >
+        <Route exact path="/StateTest" component={StateTest} />
+      </Router>
+
+      </div>
+  
+
+    );
+  }
+  
 }
 
 export default App;

@@ -16,7 +16,7 @@ class TextEdit extends React.Component {
     render(){
         return(
             <div>
-                Type here<input type="text" onKeyUp={this.showText.bind(this)} />
+                Type here in textfield<input type="text" onKeyUp={this.showText.bind(this)} />
                 <h2>{this.state.data}</h2>
             </div>
         )

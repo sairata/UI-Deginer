@@ -4,12 +4,15 @@ import Select from './Select';
 import StateTest from './StateTest';
 import TextEdit from './TextEdit';
 import Counter from './Counter';
+import NavMenu from './NavMenu';
+import NavHome from './NavHome';
+import NavAbout from './NavAbout';
+import {BrowserRouter , Route,Switch} from 'react-router-dom';
 
 
-import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
  
 
-const branches = [
+{/*const branches = [
   {key: 1, value: "red"},
   {key: 2, value: "blue"},
   {key: 3, value: "green"},
@@ -20,24 +23,31 @@ const employees = [
   {key: 1, value: "Radhakanta ghosh"},
   {key: 2, value: "Sairata"},
   {key: 3, value: "Monoj"},
-  {key: 4, value: "Harish"}
-]
+{key: 4, value: "Harish"}
+]*/}
 class App extends React.Component {
 
   render() {
     return (
-
+     <BrowserRouter>
       <div>
-      <Select data={ branches}/>
+      {/*<Select data={ branches}/>
       <Select data={employees}/> 
       <StateTest /><br/>
       <TextEdit /><br/>
       <Counter />
       <Router >
-        <Route exact path="/StateTest" component={StateTest} />
-      </Router>
-
+    <Route exact path="/StateTest" component={StateTest} />
+    </Router>*/}
+    
+      <NavMenu />
+      
+       <Switch>
+       <Route path="/" exact component={NavHome}/>
+      <Route path="/NavAbout" component={NavAbout}/>
+      </Switch>
       </div>
+     </BrowserRouter>
   
 
     );
